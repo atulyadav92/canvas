@@ -1,3 +1,6 @@
+###########################
+######    IAM  ############
+###########################
 resource "aws_iam_role" "role" {
   name = "terraform-eks-demo-cluster"
 
@@ -38,7 +41,9 @@ resource "aws_iam_role_policy_attachment" "AmazonEKSVPCResourceController" {
   policy_arn = "arn:aws:iam::aws:policy/AmazonEKSVPCResourceController"
   role       = aws_iam_role.role.name
 }
-
+###########################
+######    EKSC ############
+###########################
 resource "aws_eks_cluster" "demo" {
   name            = var.cluster_name
   role_arn        = aws_iam_role.role.arn
@@ -59,6 +64,9 @@ resource "aws_eks_cluster" "demo" {
     "k8s.io/cluster-autoscaler/enabled" = "TRUE"
   }
 }
+###########################
+######  EKSNG  ############
+###########################
 
 resource "aws_eks_node_group" "demo" {
   cluster_name    = var.cluster_name
