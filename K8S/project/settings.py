@@ -25,7 +25,7 @@ SECRET_KEY = '!zxmc^48#eli@!494w9^#56#nf*xp7s&#zu+n)82z&yxsnwnu#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', 'testserver', '127.0.0.1', '0.0.0.0/0']
+ALLOWED_HOSTS = ['localhost', 'testserver', '127.0.0.1', 'canvas.amolgcp.in']
 
 
 REST_FRAMEWORK = {
