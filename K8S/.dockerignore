@@ -1,0 +1,4 @@
+*.yaml
+.git
+.gitignore
+.idea
