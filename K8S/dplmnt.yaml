@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: canvas
+  labels:
+    app: canvas
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: canvas
+  template:
+    metadata:
+      labels:
+        app: canvas
+    spec:
+      containers:
+      - name: canvas
+        image: atulydv02/canvas:v4
+        ports:
+        - containerPort: 8000
+        readinessProbe:
+         tcpSocket:
+           port: 8000
+         initialDelaySeconds: 5
+         periodSeconds: 10
+        livenessProbe:
+         tcpSocket:
+          port: 8000
+         initialDelaySeconds: 15
+         periodSeconds: 20
