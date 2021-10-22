@@ -1,0 +1,11 @@
+cidr         = "10.0.0.0/16"
+name         = "canvas"
+sbn_cidr_pbl = ["10.0.16.0/24", "10.0.26.0/24", "10.0.36.0/24"]
+sbn_cidr_pvt = ["10.0.116.0/24", "10.0.126.0/24", "10.0.136.0/24"]
+cluster_name = "eks_canvas"
+desired_size = 1
+max_size = 1
+min_size = 1
+k8s_version = "1.20"
+profile = "prsnl"
+region = "us-east-1"
